@@ -42,7 +42,7 @@ namespace TAF_TMS_C1onl.Tests.API
         }
 
         [Test, Order(2)]
-        public void GetTestCaseTest()
+        public void GetCaseTest()
         {
             var actualCase = _caseService.GetCase(id);
             _logger.Info(actualCase.Content);
@@ -52,14 +52,14 @@ namespace TAF_TMS_C1onl.Tests.API
             Assert.AreEqual(id, actualId);
         }
 
-        // I DON'T UNDERTAND WHY DOES THIS TEST FAILED???
+        // I DON'T UNDERTAND WHY THIS TEST IS FAILED???
         [Test, Order(3)]
         public void UpdateTestCase()
         {
             var expectedCase = new Case();
             expectedCase.SectionID = 2;
             expectedCase.Title = "Updated API case test PRACTICE_33";
-            expectedCase.TypeId = 5;
+            expectedCase.TypeId = 6;
             expectedCase.PriorityId = 2;
 
             Console.WriteLine($"Update id: {id}");
@@ -81,6 +81,8 @@ namespace TAF_TMS_C1onl.Tests.API
         {
             var actualCase = _caseService.DeleteCase(id);
             _logger.Info(actualCase.StatusCode.ToString);
+
+            Assert.IsEmpty(actualCase.Content);
         }
     }
 }

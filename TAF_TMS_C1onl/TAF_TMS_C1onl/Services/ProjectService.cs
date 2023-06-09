@@ -10,7 +10,9 @@ namespace TAF_TMS_C1onl.Services;
 public class ProjectService : BaseService
 {
     public static readonly string GET_PROJECT = "index.php?/api/v2/get_project/{project_id}";
-    
+    public static readonly string ADD_PROJECT = "index.php?/api/v2/add_project";
+
+
     public ProjectService(ApiClient apiClient) : base(apiClient)
     {
     }
@@ -54,6 +56,15 @@ public class ProjectService : BaseService
             .AddBody(project);
         
         return _apiClient.ExecuteAsync<Project>(request);
+    }
+
+    public RestResponse AddProjectForMileson(Project someProject)
+    {
+        var request = new RestRequest(ADD_PROJECT, Method.Post)            
+            .AddHeader("Content-Type", "application/json")
+            .AddBody(someProject);
+
+        return _apiClient.Execute(request);
     }
 
     public RestResponse UpdateProject(string projectId, Project project)
