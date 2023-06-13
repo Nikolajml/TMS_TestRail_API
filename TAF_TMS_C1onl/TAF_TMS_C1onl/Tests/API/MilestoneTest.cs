@@ -25,7 +25,7 @@ namespace TAF_TMS_C1onl.Tests.API
             expectedProject.Announcement = "Description for Melistone";
             expectedProject.SuiteMode = 2;
 
-            var actualProject = _projectService.AddProjectForMileson(expectedProject);
+            var actualProject = _projectService.AddProject(expectedProject);
             _logger.Info("Actual Project: " + actualProject.ToString());
 
             //Выполним десериализацию JSON - строки в объект JObject

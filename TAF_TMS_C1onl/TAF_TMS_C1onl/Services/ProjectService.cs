@@ -58,7 +58,7 @@ public class ProjectService : BaseService
         return _apiClient.ExecuteAsync<Project>(request);
     }
 
-    public RestResponse AddProjectForMileson(Project someProject)
+    public RestResponse AddProject(Project someProject)
     {
         var request = new RestRequest(ADD_PROJECT, Method.Post)            
             .AddHeader("Content-Type", "application/json")
