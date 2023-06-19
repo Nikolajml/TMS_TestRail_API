@@ -30,6 +30,16 @@ namespace TAF_TMS_C1onl.Services
             return _apiClient.Execute(request);
         }
 
+        public Case AddCaseBDD(Case someCase, int sectionId)
+        {
+            var request = new RestRequest(ADD_CASE, Method.Post)
+                .AddUrlSegment("section_id", sectionId)
+                .AddHeader("Content-Type", "application/json")
+                .AddBody(someCase);
+
+            return _apiClient.Execute<Case>(request);
+        }
+
         public RestResponse GetCase(int caseId)
         {
             var request = new RestRequest(GET_CASE)
