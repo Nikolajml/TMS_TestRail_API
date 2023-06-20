@@ -48,6 +48,14 @@ namespace TAF_TMS_C1onl.Services
             return _apiClient.Execute(request);
         }
 
+        public Case GetCaseBDD(int caseId)
+        {
+            var request = new RestRequest(GET_CASE)
+                .AddUrlSegment("case_id", caseId);
+
+            return _apiClient.Execute<Case>(request);
+        }
+
         public RestResponse UpdateCase(Case someCase, int caseId)
         {
             var request = new RestRequest(UPDATE_CASE, Method.Post)
@@ -58,6 +66,16 @@ namespace TAF_TMS_C1onl.Services
             return _apiClient.Execute(request);
         }
 
+        public Case UpdateCaseBDD(Case someCase, int caseId)
+        {
+            var request = new RestRequest(UPDATE_CASE, Method.Post)
+                .AddUrlSegment("case_id", caseId)
+                .AddHeader("Content-Type", "application/json")
+                .AddBody(someCase);
+
+            return _apiClient.Execute<Case>(request);
+        }
+
         public RestResponse DeleteCase(int caseId)
         {
             var request = new RestRequest(DELETE_CASE, Method.Post)
@@ -65,6 +83,15 @@ namespace TAF_TMS_C1onl.Services
                 .AddHeader("Content-Type", "application/json");
 
             return _apiClient.Execute(request);
+        }
+
+        public Case DeleteCaseBDD(int caseId)
+        {
+            var request = new RestRequest(DELETE_CASE, Method.Post)
+                .AddUrlSegment("case_id", caseId)
+                .AddHeader("Content-Type", "application/json");
+
+            return _apiClient.Execute<Case>(request);
         }
     }
 }
