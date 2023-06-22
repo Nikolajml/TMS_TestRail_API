@@ -12,11 +12,15 @@ namespace SpecFlow.Specs.Steps
     {
         protected ApiClient apiClient;
         protected CaseService caseService;
+        protected ProjectService projectService;
+        protected MilestoneService milestoneService;
 
         public BaseApiSteps()
         {
             apiClient = new ApiClient();
             caseService = new CaseService(apiClient);
+            projectService = new ProjectService(apiClient);
+            milestoneService = new MilestoneService(apiClient);
         }
     }
 }

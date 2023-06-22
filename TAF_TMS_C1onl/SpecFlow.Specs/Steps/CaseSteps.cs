@@ -40,13 +40,11 @@ namespace SpecFlow.Specs
                   
             actualCase = caseService.AddCaseBDD(newCase, newCase.SectionID);
 
-            expectedCase = newCase;
-
-            Console.WriteLine($"Case Id: {actualCase.Id}");
+            expectedCase = newCase;            
         }
 
         [Then("added case should match the expected case")]
-        public void CpmpareActualAndExpectedResults()
+        public void CpmpareActualAndAddedCase()
         {                        
             Assert.AreEqual(actualCase.Title, expectedCase.Title);
             Assert.AreEqual(actualCase.SectionID, expectedCase.SectionID);
@@ -61,7 +59,7 @@ namespace SpecFlow.Specs
         }
 
         [Then("actual case should match the received case")]
-        public void CpmpareActualAndExpectedCase()
+        public void CpmpareActualAndReceivedCase()
         {
             Assert.AreEqual(actualCase.Title, receivedCase.Title);
             Assert.AreEqual(actualCase.SectionID, receivedCase.SectionID);

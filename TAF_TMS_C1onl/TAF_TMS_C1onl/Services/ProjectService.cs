@@ -67,6 +67,15 @@ public class ProjectService : BaseService
         return _apiClient.Execute(request);
     }
 
+    public Project AddProjectBDD(Project someProject)
+    {
+        var request = new RestRequest(ADD_PROJECT, Method.Post)
+            .AddHeader("Content-Type", "application/json")
+            .AddBody(someProject);
+
+        return _apiClient.Execute<Project>(request);
+    }
+
     public RestResponse UpdateProject(string projectId, Project project)
     {
         return null;

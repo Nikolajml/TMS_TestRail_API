@@ -13,9 +13,9 @@ Feature: SpecFlow TestCase
 	When received an existing case
 	Then actual case should match the received case
 
-	#Этот Update Test снова не проходит, как это и было в прошлом ДЗ по API
-	#error: Request failed with status code BadRequest (0,3s)
-	#Как я понимаю, он не принимает ID на 80 строке кода класса CaseSteps
+	# This test again failed
+	# error: Request failed with status code BadRequest (0,3s)	
+	# MilestoneUpdateTest passed without problems
 	@API	
 	Scenario: Update Case Test
 	Given API client is initialized
