@@ -29,5 +29,5 @@ public class ProjectSteps : BaseStep
     public void ClickAddNewProjectButton()
     {
         AddProjectPage.AddProjectButton().Click();
-    }
+    }        
 }

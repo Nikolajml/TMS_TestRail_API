@@ -39,6 +39,7 @@ namespace SpecFlow.Specs.Steps.GUI
         }
 
         [Then(@"the dashboard page is opened")]
+        [When(@"the dashboard page is opened")]
         public void IsDashbordPageIs()
         {
             Assert.AreEqual("All Projects - TestRail", Driver.Title);

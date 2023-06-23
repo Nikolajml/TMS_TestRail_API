@@ -1,12 +1,12 @@
-Feature: Create New Project
+Feature: CreateProject
     
     @GUI   
-    Scenario: Creat project in TestRail
-        Given new browser is opened
-        And a login page is opened
-        When the user "atrostyanko@gmail.com" with password "Qwertyu_1" logged in
+    Scenario: create newproject
+        Given the browser is opened
+        * the login page is opened
+        When the user is logged in: user "atrostyanko@gmail.com" password "Qwertyu_1"
         * the dashboard page is opened 
-        * the current user switched to add project page
-        * entered in the name field "Anastasiya Project Test 2 - bdd"
-        * clicked the add project button
-        Then the new project is displayed
+        * the user went to project page
+        * entered the project name "The project created like GUI BDD test"
+        * added new project
+        Then check that project was added

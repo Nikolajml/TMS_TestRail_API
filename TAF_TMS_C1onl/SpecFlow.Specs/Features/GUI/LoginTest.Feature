@@ -5,4 +5,4 @@ Feature: LoginTest
         Given the browser is opened
         And the login page is opened        
         When the user is logged in: user "atrostyanko@gmail.com" password "Qwertyu_1"
-        Then the dashboard page is opened     
+        Then the dashboard page is opened

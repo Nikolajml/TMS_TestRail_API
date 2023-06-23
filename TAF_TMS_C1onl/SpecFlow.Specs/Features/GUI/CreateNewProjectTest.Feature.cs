@@ -20,8 +20,8 @@ namespace SpecFlow.Specs.Features.GUI
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Create New Project")]
-    public partial class CreateNewProjectFeature
+    [NUnit.Framework.DescriptionAttribute("CreateProject")]
+    public partial class CreateProjectFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -35,7 +35,7 @@ namespace SpecFlow.Specs.Features.GUI
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/GUI", "Create New Project", null, ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/GUI", "CreateProject", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,14 +74,14 @@ namespace SpecFlow.Specs.Features.GUI
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Creat project in TestRail")]
+        [NUnit.Framework.DescriptionAttribute("create newproject")]
         [NUnit.Framework.CategoryAttribute("GUI")]
-        public void CreatProjectInTestRail()
+        public void CreateNewproject()
         {
             string[] tagsOfScenario = new string[] {
                     "GUI"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Creat project in TestRail", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("create newproject", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -93,28 +93,28 @@ namespace SpecFlow.Specs.Features.GUI
             {
                 this.ScenarioStart();
 #line 5
-        testRunner.Given("new browser is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+        testRunner.Given("the browser is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
-        testRunner.And("a login page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+        testRunner.And("the login page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 7
-        testRunner.When("the user \"atrostyanko@gmail.com\" with password \"Qwertyu_1\" logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+        testRunner.When("the user is logged in: user \"atrostyanko@gmail.com\" password \"Qwertyu_1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
         testRunner.And("the dashboard page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 9
-        testRunner.And("the current user switched to add project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+        testRunner.And("the user went to project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 10
-        testRunner.And("entered in the name field \"Anastasiya Project Test 2 - bdd\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+        testRunner.And("entered the project name \"The project created like GUI BDD test\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 11
-        testRunner.And("clicked the add project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+        testRunner.And("added new project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
 #line 12
-        testRunner.Then("the new project is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+        testRunner.Then("check that project was added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
