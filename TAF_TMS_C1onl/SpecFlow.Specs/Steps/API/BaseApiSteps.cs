@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using TAF_TMS_C1onl.Clients;
 using TAF_TMS_C1onl.Services;
 
-namespace SpecFlow.Specs.Steps
+namespace SpecFlow.Specs.Steps.API
 {
     public class BaseApiSteps
     {

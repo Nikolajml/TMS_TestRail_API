@@ -4,13 +4,12 @@ using NLog;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
 using SpecFlow.Internal.Json;
-using SpecFlow.Specs.Steps;
 using System;
 using TAF_TMS_C1onl.Models;
 using TAF_TMS_C1onl.Services;
 using TechTalk.SpecFlow;
 
-namespace SpecFlow.Specs
+namespace SpecFlow.Specs.Steps.API
 {
     [Binding]
     public class CaseSteps : BaseApiSteps
@@ -25,7 +24,7 @@ namespace SpecFlow.Specs
         [Given(@"API client is initialized")]
         public void GivenAPIClientIsInitialized()
         {
-            
+
         }
 
         [When(@"added new case: sectionId ""(.*)"" title ""(.*)"" typeId ""(.*)"" priorityId ""(.*)""")]
@@ -37,15 +36,15 @@ namespace SpecFlow.Specs
             newCase.Title = title;
             newCase.TypeId = typeId;
             newCase.PriorityId = priorityId;
-                  
+
             actualCase = caseService.AddCaseBDD(newCase, newCase.SectionID);
 
-            expectedCase = newCase;            
+            expectedCase = newCase;
         }
 
         [Then("added case should match the expected case")]
         public void CpmpareActualAndAddedCase()
-        {                        
+        {
             Assert.AreEqual(actualCase.Title, expectedCase.Title);
             Assert.AreEqual(actualCase.SectionID, expectedCase.SectionID);
             Assert.AreEqual(actualCase.TypeId, expectedCase.TypeId);
@@ -54,7 +53,7 @@ namespace SpecFlow.Specs
 
         [When("received an existing case")]
         public void GetCaseTest()
-        {                                   
+        {
             receivedCase = caseService.GetCaseBDD(actualCase.Id);
         }
 
@@ -82,9 +81,9 @@ namespace SpecFlow.Specs
 
         [Then("the updated case should match the expected information")]
         public void CheckUpdatedDetails()
-        {            
+        {
             Assert.AreEqual(actualCase.Title, updatedCase.Title);
-            Assert.AreEqual(actualCase.SectionID, updatedCase.SectionID);            
+            Assert.AreEqual(actualCase.SectionID, updatedCase.SectionID);
         }
 
         [When("added case is deleted")]
@@ -95,8 +94,8 @@ namespace SpecFlow.Specs
 
         [Then("the added case must be deleted")]
         public void CheckThatCaseDeleted()
-        {            
+        {
             Assert.IsNull(deletedCase);
-        }        
+        }
     }
 }

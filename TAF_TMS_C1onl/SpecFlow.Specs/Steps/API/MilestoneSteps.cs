@@ -8,8 +8,8 @@ using TAF_TMS_C1onl.Models;
 using TAF_TMS_C1onl.Services;
 using TechTalk.SpecFlow;
 
-namespace SpecFlow.Specs.Steps
-{    
+namespace SpecFlow.Specs.Steps.API
+{
     [Binding]
     public class MilestoneSteps : BaseApiSteps
     {
@@ -38,7 +38,7 @@ namespace SpecFlow.Specs.Steps
 
             actualProject = projectService.AddProjectBDD(newProject);
 
-            expectedProject = newProject;            
+            expectedProject = newProject;
         }
 
         [Then("added project should match the expected project")]
@@ -118,4 +118,3 @@ namespace SpecFlow.Specs.Steps
     }
 }
 
-	

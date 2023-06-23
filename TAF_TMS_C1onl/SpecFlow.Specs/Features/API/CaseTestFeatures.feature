@@ -1,4 +1,4 @@
-Feature: SpecFlow TestCase
+Feature: TestCase
 
 	@API	
 	Scenario Outline: Add Case Test
